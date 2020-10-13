@@ -1,4 +1,4 @@
-package b02.b2491_수열;
+package b02.BOJ_2491_수열;
 
 public class Main {
 
