@@ -1,6 +1,6 @@
-package SummerWinterCoding2018;
+package SummerWinterCoding2018.P49993_스킬트리;
 
-public class P49993_스킬트리 {
+public class Solution {
 
 	public static int solution(String skill, String[] skill_trees) {
 		int answer = 0;
