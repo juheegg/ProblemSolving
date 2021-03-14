@@ -31,7 +31,7 @@ public class Main {
 				answer = word.toString();
 		}
 		
-		System.out.println(answer);
+		System.out.println(answer.toLowerCase());
 	}
 
 }
