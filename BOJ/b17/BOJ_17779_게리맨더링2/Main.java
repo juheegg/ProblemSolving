@@ -21,16 +21,16 @@ public class Main {
 		}
 
 		int answer = Integer.MAX_VALUE;
-		for (int r = 1; r < N - 1; r++) {
-			for (int c = 0; c < N - 2; c++) {
+		for (int x = 0; x < N - 2; x++) {
+			for (int y = 1; y < N - 1; y++) {
 				for (int a = 1; a < N - 1; a++) {
 					for (int b = 1; b < N - 1; b++) {
-						if (c + a + b >= N || r - a < 0 || r + b >= N)
+						if (x + a + b >= N || y - a < 0 || y + b >= N)
 							continue;
 						area = new int[N][N];
-						checkFive(r, c, a, b);
+						checkFive(x, y, a, b);
 						print();
-						checkAnother(r, c, a, b);
+						checkAnother(x, y, a, b);
 						print();
 						int dif = getMinDif();
 						answer = Math.min(answer, dif);
@@ -51,44 +51,42 @@ public class Main {
 		System.out.println();
 	}
 
-	private static void checkFive(int r, int c, int a, int b) {
+	private static void checkFive(int x, int y, int a, int b) {
 		for (int i = 0; i <= a; i++) {
-			area[r - i][c + i] = 5;
-			area[r + b - i][c + b + i] = 5;
+			area[x + i][y - i] = 5;
+			area[x + b + i][y + b - i] = 5;
 		}
 		for (int i = 0; i <= b; i++) {
-			area[r + i][c + i] = 5;
-			area[r - a + i][c + a + i] = 5;
+			area[x + i][y + i] = 5;
+			area[x + a + i][y - a + i] = 5;
 		}
-
 		for (int i = 0; i < a; i++) {
-			int nr = r - i;
-			int nc = c + i + 1;
-			while (area[nr][nc] == 0) {
-				area[nr][nc++] = 5;
-			}
+			int nx = x + i + 1;
+			int ny = y - i;
+			while (area[nx][ny] == 0)
+				area[nx++][ny] = 5;
 		}
 		for (int i = 0; i < b; i++) {
-			int nr = r + i;
-			int nc = c + i + 1;
-			while (area[nr][nc] == 0) {
-				area[nr][nc++] = 5;
-			}
+			int nx = x + i + 1;
+			int ny = y + i;
+			while (area[nx][ny] == 0)
+				area[nx++][ny] = 5;
 		}
+
 	}
 
-	private static void checkAnother(int r, int c, int a, int b) {
+	private static void checkAnother(int x, int y, int a, int b) {
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (area[i][j] == 5)
 					continue;
-				if (i <= r && j < c + a)
+				if (i < x + a && j <= y)
 					area[i][j] = 1;
-				else if (i > r && j <= c + b)
+				else if (i <= x + b && j > y)
 					area[i][j] = 2;
-				else if (i < r - a + b && j >= c + a)
+				else if (i >= x + a && j < y - a + b)
 					area[i][j] = 3;
-				else if (i >= r - a + b && j > c + b)
+				else if (i > x + b && j >= y - a + b)
 					area[i][j] = 4;
 			}
 		}
