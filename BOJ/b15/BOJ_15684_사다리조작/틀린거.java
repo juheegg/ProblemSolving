@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+public class 틀린거 {
 
 	static int N, M, H;
 	static boolean ladder[][];

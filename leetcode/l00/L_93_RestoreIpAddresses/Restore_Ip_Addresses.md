@@ -2,7 +2,7 @@
 
 | 날짜   | 분류 | 번호 | 알고리즘 분류 |                                          |
 | ------ | ---- | ---- | ------------- | ---------------------------------------- |
-| 21-03-24 |  Leet Code   |   93   |   재귀, backtracking     | [링크](https://www.acmicpc.net/problem/) |
+| 21-03-24 |  Leet Code   |   93   |   재귀, backtracking     | [링크](https://leetcode.com/problems/restore-ip-addresses/) |
 
 
 <br/><br/>
