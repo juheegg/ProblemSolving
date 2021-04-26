@@ -97,11 +97,8 @@ public class Main2 {
 	}
 
 	private static int check(int i) {
-		if (i >= N)
-			return i % N;
-		else if (i < 0)
-			return (N - (Math.abs(i) % N)) % N;
-		return i;
+		i %= N;
+		return i >= 0 ? i : N + i;
 	}
 
 	private static int getTotalM() {
