@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="SWEA"/>
 	<classpathentry kind="src" path="ETC"/>
 	<classpathentry kind="src" path="Programmers"/>
+	<classpathentry kind="src" path="leetcode"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

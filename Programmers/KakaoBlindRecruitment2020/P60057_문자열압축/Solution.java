@@ -1,4 +1,4 @@
-package KakaoBlindRecruitment2021.P60057_문자열압축;
+package KakaoBlindRecruitment2020.P60057_문자열압축;
 
 public class Solution {
 
